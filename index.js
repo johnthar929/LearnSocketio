@@ -8,7 +8,10 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.get("/", function(req, res){
+	res.sendFile(__dirname + "/index.html"); //links to html file CHANGE /index.html to you actually html file
+	
+});
 
 io.on('connection', (socket) => {
     console.log('A user connected');
