@@ -10,9 +10,9 @@
 
     <ul id="messages"></ul>
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.min.js"></script>
     <script>
-        const socket = io('http://localhost:3000');
+        const socket = io('https://learnsocketio.onrender.com');
         
         socket.on('connect', () => {
             console.log('Connected to server');
