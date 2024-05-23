@@ -12,6 +12,8 @@
 
     <ul id="messages"></ul>
 
+    <div id="timestamp"></div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.min.js"></script>
 
     
@@ -31,6 +33,10 @@
             const li = document.createElement('li');
             li.textContent = msg;
             document.getElementById('messages').appendChild(li);
+        });
+
+        socket.on('timestamp', (timestamp) => {
+            document.getElementById('timestamp').textContent = 'Current Time: ' + timestamp;
         });
 
         function sendMessage() {
